@@ -83,8 +83,9 @@ class ContentView: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     func configuration() {
+        // set up view
+
         NavBar()
-        // set up view        
         view.backgroundColor = .white
         view.addSubview(ArtistTable)
         ArtistTable.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 75, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0 , height: 0)

@@ -17,6 +17,7 @@ class ArtistTableCell: UITableViewCell, UITableViewDelegate {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
             super.setSelected(selected, animated: animated)
+            // add label to the cell. the height of the cell will automatically resize
             addSubview(label)
             label.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 15, paddingLeft: 15, paddingBottom: 15, paddingRight: 15, width: screenWidth, height: 0)
         }

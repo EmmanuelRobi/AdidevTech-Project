@@ -132,21 +132,24 @@ class SearchView: UIViewController, UITextFieldDelegate {
         self.navigationItem.titleView = tlabel
     }
     
+    // turns spinner on
     func spinnerOn() {
         view.addSubview(spinner)
         spinner.anchor(top: SearchButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 25, paddingLeft: screenWidth / 2 - 37.5, paddingBottom: 0, paddingRight: screenWidth / 2 - 37.5, width: 0, height: 75)
         
     }
+    // turns spinner off
     func spinnerOff() {
         spinner.removeFromSuperview()
     }
     
     func configuration() {
+        // set up views
+
         NavBar()
         view.backgroundColor = .white
         Search.delegate = self
 
-        // set up views
         view.addSubview(Search)
         Search.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 150, paddingLeft: 25, paddingBottom: 0, paddingRight: 25, width: 0 , height: 50)
         
