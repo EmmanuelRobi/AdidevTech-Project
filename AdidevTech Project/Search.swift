@@ -82,7 +82,10 @@ class SearchView: UIViewController, UITextFieldDelegate {
                             let trackName = songinfo["trackName"] as? String ?? ""
                             let releaseDate = songinfo["releaseDate"] as? String ?? ""
                             let primaryGenreName = songinfo["primaryGenreName"] as? String ?? ""
-                            let trackPrice = String( songinfo["trackPrice"] as? Double ?? 0.00 )
+                            var trackPrice = String( songinfo["trackPrice"] as? Double ?? 0.00 )
+                            if trackPrice == "0.00" {
+                                trackPrice = ""
+                            }
                             let info = "Artist Name: \(artistName) \nTrack Name: \(trackName) \nTrack Price: \(trackPrice) \nRelease Date: \(releaseDate) \nPrimary Genre Name: \(primaryGenreName)"
 
                             // append to array
