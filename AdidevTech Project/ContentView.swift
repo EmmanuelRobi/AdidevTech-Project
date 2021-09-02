@@ -13,7 +13,7 @@ let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
 class ContentView: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var searchResults = [String]()
+    var searchResults = [Artist]()
     
     // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,8 +23,10 @@ class ContentView: UIViewController, UITableViewDataSource, UITableViewDelegate 
     // add data to cells labes
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArtistTableCell", for: indexPath) as? ArtistTableCell else {fatalError("Unable to create cell")}
-    
-        cell.label.text = searchResults[indexPath.row]
+        let info = "Artist Name: \(searchResults[indexPath.row].artistName) \nTrack Name: \(searchResults[indexPath.row].trackName) \nTrack Price: \(searchResults[indexPath.row].trackPrice) \nRelease Date: \(searchResults[indexPath.row].releaseDate) \nPrimary Genre Name: \(searchResults[indexPath.row].primaryGenreName)"
+
+        cell.label.text = info
+
         cell.label.numberOfLines = 0
 
         if indexPath.row % 2 == 0{

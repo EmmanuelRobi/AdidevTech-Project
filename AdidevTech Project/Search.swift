@@ -10,6 +10,11 @@ import UIKit
 
 class SearchView: UIViewController, UITextFieldDelegate {
 
+    
+    //  Model view view model
+    // Unit Test XC
+    // two tests
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // set up view
@@ -50,6 +55,7 @@ class SearchView: UIViewController, UITextFieldDelegate {
         if CheckInternet.Connection() == true {
             // connected to internet
             searchArtist(search: Search.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+
         } else {
             // not connected to internet
             let alert = UIAlertController(title: "oops", message: "no internet connection", preferredStyle: .alert)
@@ -57,62 +63,45 @@ class SearchView: UIViewController, UITextFieldDelegate {
             Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
         }
     }
-    
-    func searchArtist(search:String) {
-        spinnerOn()
-        var searchResults = [String]()
-        let url = URL(string: "https://itunes.apple.com/search?term=\(search)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-
-        let task = URLSession.shared.dataTask(with: url!) { [self] (data, response, error) in
-            // there was an error
-               if error != nil {
-                    spinnerOff()
-                    let alert = UIAlertController(title: "oops", message: "there was an error try again", preferredStyle: .alert)
-                    self.present(alert, animated: true, completion: nil)
-                    Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
-               } else {
-                // the results
-                if let content = data {
-                    if let json = (try? JSONSerialization.jsonObject(with: content, options: [])) as? [String:Any],
-                       let items = json["results"] as? [[String:Any]] {
-                        // iterate through json
-                        for songinfo in items {
-                            // Store necessary information
-                            let artistName = songinfo["artistName"] as? String ?? ""
-                            let trackName = songinfo["trackName"] as? String ?? ""
-                            let releaseDate = songinfo["releaseDate"] as? String ?? ""
-                            let primaryGenreName = songinfo["primaryGenreName"] as? String ?? ""
-                            var trackPrice = String( songinfo["trackPrice"] as? Double ?? 0.00 )
-                            if trackPrice == "0.00" {
-                                trackPrice = ""
-                            }
-                            let info = "Artist Name: \(artistName) \nTrack Name: \(trackName) \nTrack Price: \(trackPrice) \nRelease Date: \(releaseDate) \nPrimary Genre Name: \(primaryGenreName)"
-
-                            // append to array
-                            searchResults.append(info)
-                        }
-                    }
-                    DispatchQueue.main.async {
-                        if searchResults.count > 0 {
-                            // there are results
+        
+        func searchArtist(search:String) {
+            spinnerOn()
+            let url = URL(string: "https://itunes.apple.com/search?term=\(search)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+            URLSession.shared.dataTask(with: url!) { [self] (data, response, error) in
+                // there was an error
+                   if error != nil {
+                        spinnerOff()
+                        let alert = UIAlertController(title: "oops", message: "there was an error try again", preferredStyle: .alert)
+                        self.present(alert, animated: true, completion: nil)
+                        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+                   } else {
+                    // the results
+                    do {
+                        let result = try JSONDecoder().decode(Results.self, from: data!)
+                        DispatchQueue.main.async {
                             spinnerOff()
-                            let vc = ContentView()
-                            vc.searchResults = searchResults
-                            self.navigationController?.pushViewController(vc, animated: true)
-
-                        } else {
+                          // do your work
+                                if result.resultCount > 0 {
+                                let vc = ContentView()
+                                vc.searchResults = result.results
+                                self.navigationController?.pushViewController(vc, animated: true)
+                            } else {
                             // no results
-                            spinnerOff()
-                            let alert = UIAlertController(title: "oops", message: "no results for artist", preferredStyle: .alert)
-                            self.present(alert, animated: true, completion: nil)
-                            Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+                                let alert = UIAlertController(title: "oops", message: "no results for artist", preferredStyle: .alert)
+                                self.present(alert, animated: true, completion: nil)
+                                Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+                            }
                         }
+                    } catch {
+                        spinnerOff()
+                        let alert = UIAlertController(title: "oops", message: "there was an error try again", preferredStyle: .alert)
+                        self.present(alert, animated: true, completion: nil)
+                        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
                     }
-                }
-               }
-           }
-    task.resume()
-    }
+                   }
+            }.resume()
+
+        }
 
     
     func NavBar() {

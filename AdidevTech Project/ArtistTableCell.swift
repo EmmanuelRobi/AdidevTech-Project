@@ -30,6 +30,7 @@ class ArtistTableCell: UITableViewCell, UITableViewDelegate {
             iv.numberOfLines = 0
             return iv
         }()
+    
     }
 
 

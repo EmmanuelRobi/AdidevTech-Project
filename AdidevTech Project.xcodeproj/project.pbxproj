@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		148CED6026E00D77004657C1 /* AdidevTech_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CED5F26E00D77004657C1 /* AdidevTech_ProjectTests.swift */; };
+		148CED6926E091F0004657C1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148CED6826E091F0004657C1 /* Model.swift */; };
 		14943CCC26D85459004EE07E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14943CCB26D85459004EE07E /* AppDelegate.swift */; };
 		14943CCE26D85459004EE07E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14943CCD26D85459004EE07E /* SceneDelegate.swift */; };
 		14943CD026D85459004EE07E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14943CCF26D85459004EE07E /* ContentView.swift */; };
@@ -20,7 +22,21 @@
 		14943CE926D8AAE0004EE07E /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14943CE826D8AAE0004EE07E /* Spinner.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		148CED6226E00D77004657C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14943CC026D85459004EE07E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14943CC726D85459004EE07E;
+			remoteInfo = "AdidevTech Project";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		148CED5D26E00D77004657C1 /* AdidevTech ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AdidevTech ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		148CED5F26E00D77004657C1 /* AdidevTech_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdidevTech_ProjectTests.swift; sourceTree = "<group>"; };
+		148CED6126E00D77004657C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		148CED6826E091F0004657C1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		14943CC826D85459004EE07E /* AdidevTech Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AdidevTech Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14943CCB26D85459004EE07E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14943CCD26D85459004EE07E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		148CED5A26E00D77004657C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14943CC526D85459004EE07E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,10 +70,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		148CED5E26E00D77004657C1 /* AdidevTech ProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				148CED5F26E00D77004657C1 /* AdidevTech_ProjectTests.swift */,
+				148CED6126E00D77004657C1 /* Info.plist */,
+			);
+			path = "AdidevTech ProjectTests";
+			sourceTree = "<group>";
+		};
+		148CED6726E091E4004657C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				148CED6826E091F0004657C1 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		14943CBF26D85459004EE07E = {
 			isa = PBXGroup;
 			children = (
 				14943CCA26D85459004EE07E /* AdidevTech Project */,
+				148CED5E26E00D77004657C1 /* AdidevTech ProjectTests */,
 				14943CC926D85459004EE07E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				14943CC826D85459004EE07E /* AdidevTech Project.app */,
+				148CED5D26E00D77004657C1 /* AdidevTech ProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +108,7 @@
 		14943CCA26D85459004EE07E /* AdidevTech Project */ = {
 			isa = PBXGroup;
 			children = (
+				148CED6726E091E4004657C1 /* Model */,
 				14943CE626D8A296004EE07E /* CheckInternet.swift */,
 				14943CCB26D85459004EE07E /* AppDelegate.swift */,
 				14943CCD26D85459004EE07E /* SceneDelegate.swift */,
@@ -93,6 +136,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		148CED5C26E00D77004657C1 /* AdidevTech ProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 148CED6426E00D77004657C1 /* Build configuration list for PBXNativeTarget "AdidevTech ProjectTests" */;
+			buildPhases = (
+				148CED5926E00D77004657C1 /* Sources */,
+				148CED5A26E00D77004657C1 /* Frameworks */,
+				148CED5B26E00D77004657C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				148CED6326E00D77004657C1 /* PBXTargetDependency */,
+			);
+			name = "AdidevTech ProjectTests";
+			productName = "AdidevTech ProjectTests";
+			productReference = 148CED5D26E00D77004657C1 /* AdidevTech ProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		14943CC726D85459004EE07E /* AdidevTech Project */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14943CDF26D8545D004EE07E /* Build configuration list for PBXNativeTarget "AdidevTech Project" */;
@@ -119,6 +180,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					148CED5C26E00D77004657C1 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 14943CC726D85459004EE07E;
+					};
 					14943CC726D85459004EE07E = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -138,11 +203,19 @@
 			projectRoot = "";
 			targets = (
 				14943CC726D85459004EE07E /* AdidevTech Project */,
+				148CED5C26E00D77004657C1 /* AdidevTech ProjectTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		148CED5B26E00D77004657C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14943CC626D85459004EE07E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,10 +229,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		148CED5926E00D77004657C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148CED6026E00D77004657C1 /* AdidevTech_ProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14943CC426D85459004EE07E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				148CED6926E091F0004657C1 /* Model.swift in Sources */,
 				14943CE726D8A296004EE07E /* CheckInternet.swift in Sources */,
 				14943CCC26D85459004EE07E /* AppDelegate.swift in Sources */,
 				14943CE326D85736004EE07E /* ArtistTableCell.swift in Sources */,
@@ -173,6 +255,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		148CED6326E00D77004657C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14943CC726D85459004EE07E /* AdidevTech Project */;
+			targetProxy = 148CED6226E00D77004657C1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		14943CD926D8545D004EE07E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -185,6 +275,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		148CED6526E00D77004657C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2J27MR8353;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
+				INFOPLIST_FILE = "AdidevTech ProjectTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Clutchapps.AdidevTech-ProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdidevTech Project.app/AdidevTech Project";
+			};
+			name = Debug;
+		};
+		148CED6626E00D77004657C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2J27MR8353;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
+				INFOPLIST_FILE = "AdidevTech ProjectTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Clutchapps.AdidevTech-ProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdidevTech Project.app/AdidevTech Project";
+			};
+			name = Release;
+		};
 		14943CDD26D8545D004EE07E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -222,6 +354,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -283,6 +416,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -346,6 +481,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		148CED6426E00D77004657C1 /* Build configuration list for PBXNativeTarget "AdidevTech ProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				148CED6526E00D77004657C1 /* Debug */,
+				148CED6626E00D77004657C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		14943CC326D85459004EE07E /* Build configuration list for PBXProject "AdidevTech Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
